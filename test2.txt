@@ -1,9 +1,604 @@
-It is a test2 text file.
 
-It is a test2 text file.
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp
+$ touch test.txt
 
-It is a test2 text file.
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp
+$ vi test.txt
 
-It is a test2 text file.
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp
+$ touch test2.txt
 
-It is a test2 text file.
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp
+$ vi test2.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp
+$ git init
+Initialized empty Git repository in D:/Skills_Brushp/sampleapp/.git/
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git add *
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test.txt
+        new file:   test2.txt
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git rm --cached *.txt
+rm 'test.txt'
+rm 'test2.txt'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+        test2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git add *
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git commit
+[master (root-commit) e9718af] "Initial commit"
+ 2 files changed, 2 insertions(+)
+ create mode 100644 test.txt
+ create mode 100644 test2.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git checkout -b devlopment
+Switched to a new branch 'devlopment'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ ls
+test.txt  test2.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ touch test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ vi test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git add *
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git status
+On branch devlopment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test3.txt
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git commit -m "second commit"
+[devlopment 427f36d] second commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ cat test.txt
+This is a simple text file.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ vim test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git status
+On branch devlopment
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+        modified:   test2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git add *
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git commit -m "third commit"
+[devlopment 1f15ff1] third commit
+ 2 files changed, 9 insertions(+)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git diff
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ vi test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git diff
+diff --git a/test.txt b/test.txt
+index c35ccf4..b3c5270 100644
+--- a/test.txt
++++ b/test.txt
+@@ -1,2 +1,3 @@
+ This is a simple text file.
+ Adding some another txt.
++
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git rm --cached test.txt
+rm 'test.txt'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git status
+On branch devlopment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    test.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test.txt
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git add test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git status
+On branch devlopment
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git commit -m ""fourth commit"
+> git commit -m "fourth commit"
+> ^C
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git commit -m "fourth commit"
+[devlopment 88e23ed] fourth commit
+ 1 file changed, 1 insertion(+)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ cat test.txt
+This is a simple text file.
+Adding some another txt.
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git checkout master
+Switched to branch 'master'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ls
+test.txt  test2.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git checkout devlopment
+Switched to branch 'devlopment'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ ls
+test.txt  test2.txt  test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (devlopment)
+$ git checkout master
+Switched to branch 'master'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git merge devlopment
+Updating e9718af..88e23ed
+Fast-forward
+ test.txt  | 2 ++
+ test2.txt | 8 ++++++++
+ test3.txt | 1 +
+ 3 files changed, 11 insertions(+)
+ create mode 100644 test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git commit -m "Merged dev branch"
+On branch master
+nothing to commit, working tree clean
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ls
+test.txt  test2.txt  test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git remote
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git remote add upstream https://github.com/vijayshanker3149290/sampleapp.git
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git remote
+upstream
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ls
+test.txt  test2.txt  test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git push upstream
+Enumerating objects: 14, done.
+Counting objects: 100% (14/14), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (14/14), 1.13 KiB | 1.13 MiB/s, done.
+Total 14 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/vijayshanker3149290/sampleapp/pull/new/master
+remote:
+To https://github.com/vijayshanker3149290/sampleapp.git
+ * [new branch]      master -> master
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), 1.23 KiB | 31.00 KiB/s, done.
+From https://github.com/vijayshanker3149290/sampleapp
+ * [new branch]      main       -> upstream/main
+You asked to pull from the remote 'upstream', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ls
+test.txt  test2.txt  test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream/main
+fatal: 'upstream/main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git checkout main
+Switched to a new branch 'main'
+branch 'main' set up to track 'upstream/main'.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (main)
+$ ls
+README.md  test4.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (main)
+$ git checkout master
+Switched to branch 'master'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git merge main
+fatal: refusing to merge unrelated histories
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream
+You asked to pull from the remote 'upstream', but did not specify
+a branch. Because this is not the default configured remote
+for your current branch, you must specify a branch on the command line.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream main
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            main       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git fetch upstream
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream main
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            main       -> FETCH_HEAD
+fatal: refusing to merge unrelated histories
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ^C
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream master --allow-unrelated-histories
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ls
+test.txt  test2.txt  test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ gigit pull upstream master
+bash: gigit: command not found
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream master
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ ls
+test.txt  test2.txt  test3.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ vi test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git stash
+Saved working directory and index state WIP on master: 88e23ed fourth commit
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git  stash pop
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (a41b3011684917160c2c66219020f70baf6881f9)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream master
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            master     -> FETCH_HEAD
+Already up to date.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 734 bytes | 34.00 KiB/s, done.
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            master     -> FETCH_HEAD
+   88e23ed..54fd6ee  master     -> upstream/master
+error: Your local changes to the following files would be overwritten by merge:
+        test.txt
+Please commit your changes or stash them before you merge.
+Aborting
+Updating 88e23ed..54fd6ee
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ vi test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git stash
+Saved working directory and index state WIP on master: 88e23ed fourth commit
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=upstream/<branch> master
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git pull upstream master
+From https://github.com/vijayshanker3149290/sampleapp
+ * branch            master     -> FETCH_HEAD
+Updating 88e23ed..54fd6ee
+Fast-forward
+ test.txt | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ vi test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git stash pop
+Auto-merging test.txt
+CONFLICT (content): Merge conflict in test.txt
+On branch master
+Unmerged paths:
+  (use "git restore --staged <file>..." to unstage)
+  (use "git add <file>..." to mark resolution)
+        both modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+The stash entry is kept in case you need it again.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ vi test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git help
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git rm test.txt
+error: the following file has staged content different from both the
+file and the HEAD:
+    test.txt
+(use -f to force removal)
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git rm -f test.txt
+rm 'test.txt'
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    test.txt
+
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git commit -m "Deleted test.txt file"
+[master 4588a37] Deleted test.txt file
+ 1 file changed, 12 deletions(-)
+ delete mode 100644 test.txt
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$ git push upstream master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 275 bytes | 275.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/vijayshanker3149290/sampleapp.git
+   54fd6ee..4588a37  master -> master
+
+vijayshanker@vijayshanker-01 MINGW64 /d/Skills_Brushp/sampleapp (master)
+$
